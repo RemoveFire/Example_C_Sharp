@@ -11,13 +11,27 @@ Console.WriteLine($"Второе число = {n2 = int.Parse(Console.ReadLine()
 Console.WriteLine($"Третье число = {n3 = int.Parse(Console.ReadLine())}");
 
 int max = n1;
-    if (max > n2)
-       { 
-            max = n1; 
-            if (max > n3)
-             {
-                  n3 = max;
-             }
-        Console.WriteLine($"Максимальное число: {n3}");
-        }
+     if (max < n2)
+     {
+          max = n2;
+     }
+     else if (max < n3)
+     {
+          max = n3;
+     }
+Console.WriteLine($"Максимальное число: {max}");
 
+
+//Выше расположен верный код.
+// Ниже распологается код, который имеет не верное решение, найди ошибку
+
+//int max = n1;
+//    if (max > n2)
+//       { 
+//            max = n1; 
+//            if (max > n3)
+//             {
+//                  n3 = max;
+//             }
+//        Console.WriteLine($"Максимальное число: {n3}");
+//        }
