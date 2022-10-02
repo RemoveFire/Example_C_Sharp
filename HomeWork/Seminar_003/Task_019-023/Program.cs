@@ -151,7 +151,6 @@ void TaskAdd1()
     double Sum = Math.Round(s);
     int SumMax = 0;
     do SumMax = Math.Max(SumMax, (int)Sum % 10);
-    //do SumMax = Sum % 10 > SumMax ? Sum % 10 : SumMax;
     while ((Sum /= 10) != 0);
 
     Console.Write("Длина = " + Math.Round(d, 1) + "\n" + "Площадь = " + Math.Round(s, 1) + "\n" + "Максимальная цифра округленного значения = " + SumMax);
