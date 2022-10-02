@@ -157,14 +157,18 @@ void Task29()
         for (int i = 0; i < randomArray.Length; i++)
         {
             randomArray[i] = new Random().Next(1, 9);
-            Console.Write(randomArray[i] + " ");
+            int a = randomArray[i];
+      //    Console.Write(a + " ");
+      //    Console.Write("\n [" + String.Join(",", randomArray) + "]");
         }
+        Console.WriteLine("\n [" + String.Join(",", randomArray) + "]");
     }
 
     //Попытка использования цикла в массиве foreach
     void whileFor(int arrfor)
     {
         int N;
+ //       int arg = 0;
         N = OutputsEnters("Введите количество элементов в массиве: \n");
         var edArray = new int[N];
         for (var i = 0; i < N; i++)
@@ -172,7 +176,11 @@ void Task29()
             edArray[i] = OutputsEnters("Ввод элемента: \n");
         }
         foreach (int i in edArray)
-        Console.WriteLine("\n [" + String.Join(",", i) + "]");
+        {
+ //           arg = i; Изначально смысл был для вывода, но должным образом использовать для верного вывовда не удлось, вследствиичего было закоменчено
+        }
+            Console.WriteLine("\n Исходный массив, состоящий из: ");           
+            Console.Write("\n [" + String.Join(",", edArray) + "]\n");
     }
 }
 /*
