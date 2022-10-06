@@ -1,6 +1,6 @@
-﻿/* Блок выполнения домашнего задания №4, состоящий из 3 основных задач и одной дополнительной */
+﻿/* Блок выполнения домашнего задания №5, состоящий из 3 основных задач и одной дополнительной */
 Console.Clear();
-Console.WriteLine("Домашние задание №4");
+Console.WriteLine("Домашние задание №5");
 string HomeWork = "n";
 
 while (HomeWork == "n")
@@ -110,22 +110,13 @@ void Task34()
 */
 void Task36()
 {
-    int[] numbers = new int[OutputsEnters("Введите размер массива: ")];
-    FillArray(numbers, -10, 10);
-    //  int even = EvenNumber(numbers);
-    //   int odd = OddNumber(numbers);
-
-    Console.WriteLine("\nИсходный массив: ");
+    int size = OutputsEnters("Введите размер массива: ");
+    int[] numbers = new int[size];
+    FillArray(numbers, 1, 10);
+    Console.Write("\nИсходный массив: ");
     PrintArray(numbers);
-    Console.WriteLine();
-    //   Console.WriteLine($"\nКоличество чётных чисел в массиве: {even}");
-
-    //   Console.WriteLine($"\nКоличество НЕ чётных чисел в массиве: {odd}");
-
-    // Console.WriteLine("\nСумма: ");
-    //  EvenOddNumbers(numbers);
     Console.Write("\nСумма: " + Sum(numbers) + "\n");
-
+    Console.WriteLine(" ");
 
     void FillArray(int[] array, int min, int max)
     {
@@ -135,134 +126,51 @@ void Task36()
         }
     }
 
+    int Sum(int[] array)
+    {
+        int sum = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (i % 2 == 1)
+            {
+                sum += array[i];
+            }
+        }
+        return sum;
+    }
+//Проверка вне метода
     int sumNumbersEvenIndex = 0;
-
     for (int i = 0; i < numbers.Length; i++)
     {
-        if (i % 2 != 1)
+        if (i % 2 == 1)
         {
             sumNumbersEvenIndex += numbers[i];
         }
     }
-    Console.Write("Проверка : " + sumNumbersEvenIndex);
+    Console.Write("Проверка : " + sumNumbersEvenIndex + "\n");
 
-    int Sum(int[] array)
-    {
-        int sum = 0;
-        for (int i = 0; i <= array.Length; i++)
-        {
-            if (i % 2 != 1)
-            {
-                sum = sum + i; // тут проблема, не понимаю как вывести из создаваемого массива элемент и направить его сюда из-за чего результат не верный
-            }
-        }
+//Еще один из способов решения задачи в одном методе
+    int randomNumbers2 = RandomNumbers2(size, 1, 10);
+    Console.WriteLine("\n2) Сумма элементов, стоящих на нечётных позициях: " + randomNumbers2);
 
-        return sum;
-    }
-
-    Console.Write("\n" + "\nПолучившийся массив: ");
-    PrintArray(numbers);
-
-    int RandomNumbers(int[] numbers)
-    {
-        int i = 0;
-        int sumElements = 0;
-
-        if (i % 2 != 1)
-        {
-            sumElements = sumElements + numbers[i];
-        }
-        return sumElements;
-    }
-
-    int randomNumbers = RandomNumbers(numbers);
-
-    Console.WriteLine($"\nСумма элементов, стоящих на нечётных позициях: {randomNumbers}");
-
-    int numberElements2 = OutputsEnters("\nВведите размер массива: ");
-
-    int RandomNumbers2(int numberElements, int min2, int max2)
+    int RandomNumbers2(int numberElements2, int min2, int max2)
     {
         int[] randomNumbers2 = new int[numberElements2];
         int sumElements2 = 0;
-
-        Console.Write("\n Исходный массив: ");
+        Console.Write("\n *** Решение другим методом с подстановкой такого же размера массива, который был введен ранее *** " + "\n");
+        Console.Write("2) Исходный массив: ");
         for (int i = 0; i < randomNumbers2.Length; i++)
         {
             randomNumbers2[i] = new Random().Next(min2, max2);
-
-            // 
-            Console.Write(" [" + String.Join(",", randomNumbers2[i]) + "]");
-            if (i % 2 != 1)
+            Console.Write(" " + String.Join(" ,", randomNumbers2[i]) + " ");
+            if (i % 2 == 1)
             {
                 sumElements2 += randomNumbers2[i];
             }
         }
         return sumElements2;
-
     }
-
-    int randomNumbers2 = RandomNumbers2(numberElements2, 1, 10);
-
-    Console.WriteLine($"\nСумма элементов, стоящих на нечётных позициях: {randomNumbers2}");
-
-    // int EvenNumber(int[] array)
-    // {
-    //     int isEven = 0;
-    //     for (int i = 0; i <= array.Length; i++)
-    //     {
-    //         if (array[i] % 2 == 0)
-    //         {
-    //             isEven++;
-    //         }
-    //         else
-    //         {
-
-    //         }
-    //     }
-    //     return isEven;
-    // }
-    // // int OddNumber(int[] array)
-    // // {
-    // //     int isOdd = 0;
-    // //     for(int i = 0; i <= array.Length; i++)
-    // //     {
-    // //         if(array[i]  % 2 == 0)
-    // //         {
-    // //             isOdd++;
-    // //            // array[i] /= 10;
-    // //         }
-    // //     }
-    // //     return isOdd;
-
-    // int EvenOddNumbers(int[] array)
-    // {
-    //     int i = 0;
-
-
-    //     int sum = 0;
-    //     int evenNumbersCount = 0;
-    //     int oddNumbersCount = 0;
-    //     for (int n = array[i] + 1; n < array.Length; n++)
-    //     {
-    //         bool isEven = n % 2 == 0;
-    //         if (isEven)
-    //         {
-    //             evenNumbersCount++;
-    //         }
-    //         else
-    //         {
-    //             oddNumbersCount++;
-    //         }
-    //         sum += n;
-
-    //     }
-    //     return sum;
-
-    // }
-
 }
-
 /*
 Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 [3 7 22 2 78] -> 76
@@ -305,4 +213,3 @@ void Task38()
 
     Console.WriteLine($"\nРазница между между максимальным ({maxNumber}) и минимальным({minNumber}) элементами: {decision}");
 }
-
