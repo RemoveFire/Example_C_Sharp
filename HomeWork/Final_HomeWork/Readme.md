@@ -1,8 +1,8 @@
 # Итоговоя проверочная работа #
 <h1 align="center">Hi there, I'm<a href="https://github.com/RemoveFire/" target="_blank">Viktor</a> 
-<img src="/images/Hi.gif" height="32"/></h1>
+<img src="images/Hi.gif" height="32"/></h1>
  
-<h1 align="center"><img src="/images/tux.webp" height="100%"/></h1>
+<h1 align="center"><img src="images/tux.webp" height="100%"/></h1>
  
   * Вы находимтесь в аккаунте **[RemoveFire](https://github.com/RemoveFire)**. 
   * Заканчиваю курс по изучению основ в языке ***C #***.
@@ -49,11 +49,11 @@ __*[“Russia”, “Denmark”, “Kazan”] → []*__
 
 <h2 align="center"><b> Блок-схема алгоритма решения задачи </b>
  
- [![Алгоритм решения](/Example_C_Sharp/blob/main/HomeWork/Final_HomeWork/images/algoritm.png)](https://programforyou.ru/block-diagram-redactor)
+ [![Алгоритм решения](images/algoritm.png)](https://programforyou.ru/block-diagram-redactor)
  
 </h2>
 
 ---
 
 
-![Tux, the Linux mascot](/images/tux.webp)  
+![Tux, the Linux mascot](images/tux.webp)  
