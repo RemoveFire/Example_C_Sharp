@@ -13,7 +13,7 @@ switch (Console.ReadKey().KeyChar.ToString().ToLower())
         string[] stringArrayR = FillArrayRandomized(arrayLength,9);
         PrintArray(stringArrayR);
         string[] newStringArrayR = MakeShortArray(stringArrayR);
-        System.Console.WriteLine("И получилось из него:");
+        System.Console.Write("И получилось из него: -> ");
         PrintArray(newStringArrayR);
         break;
     case "k":
@@ -21,7 +21,7 @@ switch (Console.ReadKey().KeyChar.ToString().ToLower())
         string[] stringArrayS = FillArrayFromString(Console.ReadLine() ?? "q w");
         PrintArray(stringArrayS);
         string[] newStringArrayS = MakeShortArray(stringArrayS);
-        System.Console.WriteLine("И получилось из него:");
+        System.Console.Write("И получилось из него: -> ");
         PrintArray(newStringArrayS);
         break;
     default:
@@ -38,7 +38,7 @@ string[] FillArrayFromString(string inputstring)
 
 string[] FillArrayRandomized(int arrayLength,int maxLength)
 {
-    string symbolString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string symbolString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     int symbolStringLength = symbolString.Length;
     string[] tempArray = new string[arrayLength];
     var r = new Random();
