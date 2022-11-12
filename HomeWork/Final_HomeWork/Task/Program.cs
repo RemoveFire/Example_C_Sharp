@@ -1,32 +1,58 @@
-﻿Console.Clear();
+﻿System.Console.Clear();
 
 const int mainLength=3;
 
 System.Console.WriteLine("Если желаете ввести массив с клавиатуры, то введите:" + " k" + "\n");
-System.Console.Write("Или если желаете заполнить случайно, то введите:" + " r" + "\n"  + "\nВведите значение: ");
+System.Console.Write("Или если желаете заполнить случайно, то введите:" + " r" + "\n"  + "\nВведите значение: "+ "\n");
 
 switch (Console.ReadKey().KeyChar.ToString().ToLower())
 {
-        case "r":
+    case "r":
         System.Console.Write("\nЗадайте желаемую размерность массива: ");
-        int arrayLength = InputNumbers();
-        string[] stringArrayR = FillArrayRandomized(arrayLength,9);
-        PrintArray(stringArrayR);
-        string[] newStringArrayR = MakeShortArray(stringArrayR, mainLength);
-        System.Console.Write("И получилось из него: -> ");
-        PrintArray(newStringArrayR);
+        Task_Random();
         break;
     case "k":
-        System.Console.WriteLine("\nВведите слова через пробел: ");
-        string[] stringArrayS = FillArrayFromString(Console.ReadLine() ?? "q w");
-        PrintArray(stringArrayS);
-        string[] newStringArrayS = MakeShortArray(stringArrayS, mainLength);
-        System.Console.Write("И получилось из него: -> ");
-        PrintArray(newStringArrayS);
+        Task_FromString();
         break;
     default:
+        System.Console.Clear();
         System.Console.WriteLine("\nНе понял эту букву :(");
         break;
+}
+
+void Task_Random()
+{
+    int arrayLength = InputNumbers();
+    string[] stringArrayR = FillArrayRandomized(arrayLength,9);
+    PrintArray(stringArrayR);
+    string[] newStringArrayR = MakeShortArray(stringArrayR,mainLength);
+    System.Console.WriteLine("\nИ получилось из него: ->");
+    PrintArray(newStringArrayR);
+}
+
+void Task_FromString()
+{
+    System.Console.WriteLine("\nВведите слова через пробел: ");
+    string[] stringArrayS = FillArrayFromString(Console.ReadLine() ?? "q w");
+    PrintArray(stringArrayS);
+    string[] newStringArrayS = MakeShortArray(stringArrayS,mainLength);
+    System.Console.WriteLine("\nИ получилось из него: ->");
+    PrintArray(newStringArrayS); 
+}
+void PrintArray(string[] tempArray)
+{
+    int arrayLength = tempArray.Length;
+    if (arrayLength == 0)
+    {
+        System.Console.WriteLine("Массив пуст");
+        return;
+    }
+    System.Console.Write("Массив: [");
+    for (int i = 0; i < arrayLength; i++)
+    {
+        System.Console.Write(tempArray[i] + " ");
+    }
+    System.Console.WriteLine("\b]");
 }
 
 string[] FillArrayFromString(string inputstring)
@@ -53,22 +79,6 @@ string[] FillArrayRandomized(int arrayLength,int maxLength)
     return tempArray;
 }
 
-void PrintArray(string[] tempArray)
-{
-    int arrayLength = tempArray.Length;
-    if (arrayLength == 0)
-    {
-        System.Console.WriteLine("Массив пуст");
-        return;
-    }
-    System.Console.Write("Массив: [");
-    for (int i = 0; i < arrayLength; i++)
-    {
-        System.Console.Write(tempArray[i] + " ");
-    }
-    System.Console.WriteLine("\b]");
-}
-
 int InputNumbers()
 {
     int number = 0;
@@ -84,7 +94,7 @@ int InputNumbers()
         catch (FormatException)
         {
             isConverted = false;
-            Console.WriteLine("Неправильно задано число");
+            Console.WriteLine("Неправильно задано число!");
         }
     }
     return number;
