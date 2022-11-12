@@ -5,9 +5,9 @@ const int wordLength=3;
 System.Console.WriteLine("Если желаете ввести массив с клавиатуры, то введите:" + " k" + "\n");
 System.Console.Write("Или если желаете заполнить случайно, то введите:" + " r" + "\n"  + "\nВведите значение: ");
 
-switch (Console.ReadKey().KeyChar)
+switch (Console.ReadKey().KeyChar.ToString().ToLower())
 {
-    case 'r':
+    case "r":
         System.Console.Write("\nЗадайте желаемую размерность массива: ");
         int arrayLength = InputNumbers();
         string[] stringArrayR = FillArrayRandomized(arrayLength);
@@ -16,7 +16,7 @@ switch (Console.ReadKey().KeyChar)
         System.Console.WriteLine("И получилось из него:");
         PrintArray(newStringArrayR);
         break;
-    case 'k':
+    case "k":
         System.Console.WriteLine("\nВведите слова через пробел: ");
         string[] stringArrayS = FillArrayFromString(Console.ReadLine() ?? "q w");
         PrintArray(stringArrayS);
