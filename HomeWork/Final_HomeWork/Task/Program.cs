@@ -1,9 +1,10 @@
 ﻿System.Console.Clear();
 
-const int mainLength=3;
+const int mainLength = 3;
+Console.WriteLine("\t\tИтоговая работа по С#\n\n");
 
 System.Console.WriteLine("Если желаете ввести массив с клавиатуры, то введите:" + " k" + "\n");
-System.Console.Write("Или если желаете заполнить случайно, то введите:" + " r" + "\n"  + "\nВведите значение: "+ "\n");
+System.Console.Write("Или если желаете заполнить случайно, то введите:" + " r" + "\n" + "\nВведите значение: " + "\n");
 
 switch (Console.ReadKey().KeyChar.ToString().ToLower())
 {
@@ -16,16 +17,16 @@ switch (Console.ReadKey().KeyChar.ToString().ToLower())
         break;
     default:
         System.Console.Clear();
-        System.Console.WriteLine("\nНе понял эту букву :(");
+        System.Console.WriteLine("\nНе понял эту букву :(\n");
         break;
 }
 
 void Task_Random()
 {
     int arrayLength = InputNumbers();
-    string[] stringArrayR = FillArrayRandomized(arrayLength,9);
+    string[] stringArrayR = FillArrayRandomized(arrayLength, 9);
     PrintArray(stringArrayR);
-    string[] newStringArrayR = MakeShortArray(stringArrayR,mainLength);
+    string[] newStringArrayR = MakeShortArray(stringArrayR, mainLength);
     System.Console.WriteLine("\nИ получилось из него: ->");
     PrintArray(newStringArrayR);
 }
@@ -35,9 +36,9 @@ void Task_FromString()
     System.Console.WriteLine("\nВведите слова через пробел: ");
     string[] stringArrayS = FillArrayFromString(Console.ReadLine() ?? "q w");
     PrintArray(stringArrayS);
-    string[] newStringArrayS = MakeShortArray(stringArrayS,mainLength);
+    string[] newStringArrayS = MakeShortArray(stringArrayS, mainLength);
     System.Console.WriteLine("\nИ получилось из него: ->");
-    PrintArray(newStringArrayS); 
+    PrintArray(newStringArrayS);
 }
 void PrintArray(string[] tempArray)
 {
@@ -62,7 +63,7 @@ string[] FillArrayFromString(string inputstring)
     return tempArray;
 }
 
-string[] FillArrayRandomized(int arrayLength,int maxLength)
+string[] FillArrayRandomized(int arrayLength, int maxLength)
 {
     string symbolString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     int symbolStringLength = symbolString.Length;
