@@ -1,6 +1,6 @@
 ﻿Console.Clear();
 
-const int wordLength=3;
+const int mainLength=3;
 
 System.Console.WriteLine("Если желаете ввести массив с клавиатуры, то введите:" + " k" + "\n");
 System.Console.Write("Или если желаете заполнить случайно, то введите:" + " r" + "\n"  + "\nВведите значение: ");
@@ -12,7 +12,7 @@ switch (Console.ReadKey().KeyChar.ToString().ToLower())
         int arrayLength = InputNumbers();
         string[] stringArrayR = FillArrayRandomized(arrayLength,9);
         PrintArray(stringArrayR);
-        string[] newStringArrayR = MakeShortArray(stringArrayR);
+        string[] newStringArrayR = MakeShortArray(stringArrayR, mainLength);
         System.Console.Write("И получилось из него: -> ");
         PrintArray(newStringArrayR);
         break;
@@ -20,7 +20,7 @@ switch (Console.ReadKey().KeyChar.ToString().ToLower())
         System.Console.WriteLine("\nВведите слова через пробел: ");
         string[] stringArrayS = FillArrayFromString(Console.ReadLine() ?? "q w");
         PrintArray(stringArrayS);
-        string[] newStringArrayS = MakeShortArray(stringArrayS);
+        string[] newStringArrayS = MakeShortArray(stringArrayS, mainLength);
         System.Console.Write("И получилось из него: -> ");
         PrintArray(newStringArrayS);
         break;
@@ -90,20 +90,20 @@ int InputNumbers()
     return number;
 }
 
-string[] MakeShortArray(string[] tempArray)
+string[] MakeShortArray(string[] tempArray, int mainLength)
 {
     int arrayLength = tempArray.Length;
     int n = 0;
     for (int i = 0; i < arrayLength; i++)
     {
-        if (tempArray[i].Length <= 3)
+        if (tempArray[i].Length <= mainLength)
             n++;
     }
     string[] newArray = new string[n];
     n = 0;
     for (int i = 0; i < arrayLength; i++)
     {
-        if (tempArray[i].Length <= 3)
+        if (tempArray[i].Length <= mainLength)
         {
             newArray[n] = tempArray[i];
             n++;
