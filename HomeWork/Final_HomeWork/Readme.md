@@ -49,7 +49,7 @@ __*[“Russia”, “Denmark”, “Kazan”] → []*__
 
 <h2 align="center"><b> Блок-схема алгоритма решения задачи </b>
  
- [![Алгоритм решения](/images/algoritm.png)](https://programforyou.ru/block-diagram-redactor)
+ [![Алгоритм решения](/Example_C_Sharp/blob/main/HomeWork/Final_HomeWork/images/algoritm.png)](https://programforyou.ru/block-diagram-redactor)
  
 </h2>
 
